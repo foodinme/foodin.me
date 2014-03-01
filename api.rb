@@ -20,7 +20,7 @@ class SessionStore
 
     def fetch_result(index)
       index = index.to_i % data[:results].length
-      return data[:results][index], index+1
+      return data[:results][index], index, index+1
     end
 
     def to_json(*a)
@@ -50,14 +50,27 @@ class API < Sinatra::Base
 
   get '/gimme' do
     authenticate do |session|
-      unless params[:next] && session.stored_results?
+      unless params[:id] && session.stored_results?
         session.store_results client.retrieve
       end
       
-      result, next_id = session.fetch_result(params[:next])
+      result, this_id, next_id = session.fetch_result(params[:id])
 
       json "result"  => result.to_h,
-           "next"    => url("/gimme?next=#{next_id}&token=#{session.token}"),
+           "meh"     => url("/gimme?id=#{next_id}&token=#{session.token}"),
+           "yeah"    => {
+             "url"    => url("/yeah"),
+             "params" => "id=#{this_id}&token=#{session.token}",
+           },
+           "session" => session
+    end
+  end
+  
+  post '/yeah' do
+    authenticate do |session|
+      result, this_id, next_id = session.fetch_result(params[:id])
+
+      json "result"  => result.to_h,
            "session" => session
     end
   end
