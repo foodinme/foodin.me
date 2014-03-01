@@ -1,0 +1,493 @@
+---
+- !ruby/struct:Burgatron::Destination
+  name: Ford Food and Drink
+  location:
+    city: Portland
+    display_address:
+    - SE 11th & SE Division
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97202'
+    country_code: US
+    address:
+    - SE 11th & SE Division
+    state_code: OR
+  categories:
+  - diners
+  - coffee
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/ford-food-and-drink-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 64
+- !ruby/struct:Burgatron::Destination
+  name: Portobello Vegan Trattoria
+  location:
+    city: Portland
+    display_address:
+    - 1125 SE Division St
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 1125 SE Division St
+    state_code: OR
+  categories:
+  - italian
+  - vegan
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/portobello-vegan-trattoria-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 319
+- !ruby/struct:Burgatron::Destination
+  name: Double Dragon
+  location:
+    city: Portland
+    display_address:
+    - 1235 SE Division St
+    - Ladd's Addition
+    - Portland, OR 97214
+    neighborhoods:
+    - Ladd's Addition
+    - Hosford-Abernathy
+    - Southeast Portland
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 1235 SE Division St
+    state_code: OR
+  categories:
+  - sandwiches
+  - asianfusion
+  - cocktailbars
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/double-dragon-portland-2
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 139
+- !ruby/struct:Burgatron::Destination
+  name: Taqueria Los Gorditos
+  location:
+    city: Portland
+    display_address:
+    - 1212 SE Division St
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 1212 SE Division St
+    state_code: OR
+  categories:
+  - mexican
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/taqueria-los-gorditos-portland-3
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 246
+- !ruby/struct:Burgatron::Destination
+  name: Genies Cafe
+  location:
+    city: Portland
+    display_address:
+    - 1101 SE Division St
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 1101 SE Division St
+    state_code: OR
+  categories:
+  - newamerican
+  - breakfast_brunch
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/genies-cafe-portland
+    rating_img: http://s3-media1.ak.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png
+    review_count: 265
+- !ruby/struct:Burgatron::Destination
+  name: PBJ's Grilled
+  location:
+    city: Portland
+    display_address:
+    - SE 12th Ave & SE Hawthorne Blvd
+    - Buckman
+    - Portland, OR 97214
+    neighborhoods:
+    - Buckman
+    - Southeast Portland
+    postal_code: '97214'
+    country_code: US
+    address:
+    - SE 12th Ave & SE Hawthorne Blvd
+    state_code: OR
+  categories:
+  - sandwiches
+  - foodtrucks
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/pbjs-grilled-portland
+    rating_img: http://s3-media2.ak.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png
+    review_count: 37
+- !ruby/struct:Burgatron::Destination
+  name: Aprisa Mexican Cuisine
+  location:
+    city: Portland
+    display_address:
+    - 2311 SE 8th Ave
+    - Hosford-Abernathy
+    - Portland, OR 97214
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 2311 SE 8th Ave
+    state_code: OR
+  categories:
+  - mexican
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/aprisa-mexican-cuisine-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 101
+- !ruby/struct:Burgatron::Destination
+  name: Edelweiss Sausage & Delicatessen
+  location:
+    city: Portland
+    display_address:
+    - 3119 SE 12th Ave
+    - Brooklyn
+    - Portland, OR 97202
+    neighborhoods:
+    - Brooklyn
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 3119 SE 12th Ave
+    state_code: OR
+  categories:
+  - delis
+  - gourmet
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/edelweiss-sausage-and-delicatessen-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 71
+- !ruby/struct:Burgatron::Destination
+  name: Teote Areperia
+  location:
+    city: Portland
+    display_address:
+    - 1615 SE 12th Ave
+    - Hosford-Abernathy
+    - Portland, OR 97214
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 1615 SE 12th Ave
+    state_code: OR
+  categories:
+  - latin
+  - gluten_free
+  - argentine
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/teote-areperia-portland
+    rating_img: http://s3-media2.ak.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png
+    review_count: 65
+- !ruby/struct:Burgatron::Destination
+  name: These Guys Brooklyn
+  location:
+    city: Portland
+    display_address:
+    - 3400 1/2  SE Milwaukie Ave
+    - Brooklyn
+    - Portland, OR 97202
+    neighborhoods:
+    - Brooklyn
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 3400 1/2  SE Milwaukie Ave
+    state_code: OR
+  categories:
+  - tradamerican
+  - bbq
+  - foodtrucks
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/these-guys-brooklyn-portland-2
+    rating_img: http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png
+    review_count: 14
+- !ruby/struct:Burgatron::Destination
+  name: Devil's Dill Sandwich Shop
+  location:
+    city: Portland
+    display_address:
+    - 1711 SE Hawthorne Blvd.
+    - Buckman
+    - Portland, OR 97214
+    neighborhoods:
+    - Buckman
+    - Southeast Portland
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 1711 SE Hawthorne Blvd.
+    state_code: OR
+  categories:
+  - sandwiches
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/devils-dill-sandwich-shop-portland
+    rating_img: http://s3-media2.ak.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png
+    review_count: 68
+- !ruby/struct:Burgatron::Destination
+  name: Southeast Grind
+  location:
+    city: Portland
+    display_address:
+    - 1223 SE Powell Blvd
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 1223 SE Powell Blvd
+    state_code: OR
+  categories:
+  - vegan
+  - vegetarian
+  - coffee
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/southeast-grind-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 108
+- !ruby/struct:Burgatron::Destination
+  name: Sip
+  location:
+    city: Portland
+    display_address:
+    - 3029 SE 21st Ave
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Clinton
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 3029 SE 21st Ave
+    state_code: OR
+  categories:
+  - foodstands
+  - juicebars
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/sip-portland
+    rating_img: http://s3-media2.ak.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png
+    review_count: 76
+- !ruby/struct:Burgatron::Destination
+  name: Sanborn's
+  location:
+    city: Portland
+    display_address:
+    - 3200 SE Milwaukie Ave
+    - Brooklyn
+    - Portland, OR 97202
+    neighborhoods:
+    - Brooklyn
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 3200 SE Milwaukie Ave
+    state_code: OR
+  categories:
+  - breakfast_brunch
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/sanborns-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 187
+- !ruby/struct:Burgatron::Destination
+  name: Juniors Cafe
+  location:
+    city: Portland
+    display_address:
+    - 1742 SE 12th Ave
+    - Ladd's Addition
+    - Portland, OR 97214
+    neighborhoods:
+    - Ladd's Addition
+    - Hosford-Abernathy
+    - Southeast Portland
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 1742 SE 12th Ave
+    state_code: OR
+  categories:
+  - vegetarian
+  - breakfast_brunch
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/juniors-cafe-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 170
+- !ruby/struct:Burgatron::Destination
+  name: Gracie's Cafe
+  location:
+    city: Portland
+    display_address:
+    - 1101 SE Division
+    - Hosford-Abernathy
+    - Portland, OR 97202
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 1101 SE Division
+    state_code: OR
+  categories:
+  - cafes
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/gracies-cafe-portland
+    rating_img: http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png
+    review_count: 1
+- !ruby/struct:Burgatron::Destination
+  name: The Lamp
+  location:
+    city: Portland
+    display_address:
+    - 3023 SE Milwaukie Ave
+    - Brooklyn
+    - Portland, OR 97202
+    neighborhoods:
+    - Brooklyn
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 3023 SE Milwaukie Ave
+    state_code: OR
+  categories:
+  - newamerican
+  - salad
+  - sandwiches
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/the-lamp-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 40
+- !ruby/struct:Burgatron::Destination
+  name: Brooklyn House Restaurant
+  location:
+    city: Portland
+    display_address:
+    - 3131 SE 12th Ave
+    - Brooklyn
+    - Portland, OR 97202
+    neighborhoods:
+    - Brooklyn
+    - Southeast Portland
+    postal_code: '97202'
+    country_code: US
+    address:
+    - 3131 SE 12th Ave
+    state_code: OR
+  categories:
+  - comfortfood
+  - modern_european
+  - gluten_free
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/brooklyn-house-restaurant-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 24
+- !ruby/struct:Burgatron::Destination
+  name: Castagna Restaurant
+  location:
+    city: Portland
+    display_address:
+    - 1752 SE Hawthorne Blvd
+    - Ladd's Addition
+    - Portland, OR 97214
+    neighborhoods:
+    - Ladd's Addition
+    - Hosford-Abernathy
+    - Southeast Portland
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 1752 SE Hawthorne Blvd
+    state_code: OR
+  categories:
+  - newamerican
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/castagna-restaurant-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 100
+- !ruby/struct:Burgatron::Destination
+  name: Harvester Brewing
+  location:
+    city: Portland
+    display_address:
+    - 2030 SE 7th Ave
+    - Hosford-Abernathy
+    - Portland, OR 97214
+    neighborhoods:
+    - Hosford-Abernathy
+    - Southeast Portland
+    - Central Eastside
+    postal_code: '97214'
+    country_code: US
+    address:
+    - 2030 SE 7th Ave
+    state_code: OR
+  categories:
+  - gluten_free
+  - newamerican
+  - breweries
+  source: yelp
+  source_details:
+    url: http://m.yelp.com/biz/harvester-brewing-portland
+    rating_img: http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png
+    review_count: 12

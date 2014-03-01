@@ -4,4 +4,9 @@ require 'bundler'
 Bundler.require
 
 require './app'
-run App
+require './api'
+
+run Rack::URLMap.new(
+  "/"    => App.new,
+  "/api" => API.new
+)
