@@ -1,5 +1,11 @@
 // Including web fonts
 @import '//cloud.typography.com/7097472/650184/css/fonts.css';
 
+// main dependencies
 @import 'reset';
+@import 'mixins';
+
+// Site-wide choices
 @import 'typography';
+
+// Section Specific files
