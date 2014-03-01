@@ -1,5 +1,6 @@
-PATH
-  remote: ../burgatron
+GIT
+  remote: git://github.com/foodinme/burgatron.git
+  revision: 9929d63c5e9d73664f9fb9a882e44058012b404e
   specs:
     burgatron (0.0.1)
       yelpster
