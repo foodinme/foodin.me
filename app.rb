@@ -8,6 +8,6 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    'We\'re coming.'
+    haml :index
   end
 end
