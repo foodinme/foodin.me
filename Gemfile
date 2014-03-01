@@ -9,4 +9,8 @@ gem 'sass'
 gem 'coffee-script'
 gem 'haml'
 gem 'sinatra-asset-pipeline'
+
+gem 'pg'
+gem 'sequel'
+
 gem 'burgatron', github: 'foodinme/burgatron'

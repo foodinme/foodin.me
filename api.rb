@@ -2,31 +2,36 @@ Bundler.require
 
 require 'securerandom'
 require 'sinatra/json'
+require 'sequel'
 
-class SessionStore
-
-  class Session < Struct.new(:token, :store)
-    def data
-      store[token] ||= {}
-    end
-
-    def stored_results?
-      data[:results]
-    end
-
-    def store_results(results)
-      data[:results] = results
-    end
-
-    def fetch_result(index)
-      index = index.to_i % data[:results].length
-      return data[:results][index], index, index+1
-    end
-
-    def to_json(*a)
-      { token: token }.to_json(*a)
-    end
+class Session < Struct.new(:token, :store)
+  def data
+    store[token] ||= {}
   end
+
+  def merge(new_data)
+    store[token] = data.merge(new_data)
+  end
+
+  def stored_results?
+    data[:results]
+  end
+
+  def store_results(results)
+    merge results: results
+  end
+
+  def fetch_result(index)
+    index = index.to_i % data[:results].length
+    return data[:results][index], index, index+1
+  end
+
+  def to_json(*a)
+    { token: token }.to_json(*a)
+  end
+end
+
+class MemorySessionStore
 
   def initialize
     @data = {}
@@ -43,6 +48,51 @@ class SessionStore
     SecureRandom.hex
   end
 
+end
+
+class SequelSessionStore < MemorySessionStore
+
+  class TableCache
+
+    def initialize(table)
+      @table = table
+      @cache = {}
+    end
+
+    def [](key)
+      @cache[key] ||= begin
+        result = @table.first(key: key.to_s)
+        if result
+          YAML.load result[:data]
+        else
+          {}
+        end
+      end
+    end
+
+    def []=(key, val)
+      key = key.to_s
+      if @table.where(key: key).count > 0
+        @table.where(key: key).update(data: YAML.dump(val))
+      else
+        @table.insert(key: key, data: YAML.dump(val))
+      end
+      @cache[key] = val
+    end
+
+  end
+
+  def initialize(db)
+    @data = TableCache.new(db[:sessions])
+  end
+
+end
+
+if ENV['DATABASE_URL']
+  db = Sequel.connect ENV['DATABASE_URL']
+  SessionStore = SequelSessionStore.new db
+else
+  SessionStore = MemorySessionStore.new
 end
 
 class API < Sinatra::Base
@@ -86,7 +136,7 @@ class API < Sinatra::Base
   end
 
   def sessions
-    @@sessions ||= SessionStore.new
+    SessionStore
   end
 
   def authenticate(&blk)
