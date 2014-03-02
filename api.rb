@@ -98,6 +98,7 @@ end
 BurgatronClient = Burgatron::Client.new 
 
 if ENV['YELP_CONSUMER_KEY']
+  puts "You got the real Yelp now, dog!"
   BurgatronClient.add_source Burgatron::Sources::Yelp.new(
     yelp_config: {
       consumer_key:    ENV['YELP_CONSUMER_KEY'],
@@ -116,7 +117,7 @@ class API < Sinatra::Base
   get '/gimme' do
     authenticate do |session|
       unless params[:id] && session.stored_results?
-        session.store_results client.retrieve
+        session.store_results client.retrieve(retrieve_params)
       end
       
       result, this_id, next_id = session.fetch_result(params[:id])
@@ -152,6 +153,13 @@ class API < Sinatra::Base
 
   def authenticate(&blk)
     yield sessions.start(params[:token])
+  end
+
+  def retrieve_params
+    {
+      latitude: params[:latitude] ? params[:latitude].to_f : 45.50144,
+      longitude: params[:longitude] ? params[:latitude].to_f : -122.654306
+    }
   end
 
 end
