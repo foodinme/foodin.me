@@ -1,0 +1,51 @@
+section.gimme {
+  height: 100%;
+  text-align: center;
+  section.gladware {
+    text-align: center;
+    height: 9rem;
+    margin: 4rem 0 1rem;
+    img.food {
+      height: 100%;
+      max-width: 90%;
+    }
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin: 1.5rem 1rem;
+  }
+  a.js-yeah {
+    background-color: #f05855;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-radius: .3rem;
+  }
+  a.js-nah {
+    display: inline-block;
+    margin: 1.5rem auto 0;
+  }
+  section.yelp {
+    position: absolute;
+    height: 2rem;
+    background-color: #fff;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    img.stars {
+      display: block;
+      float: left;
+      margin: .7rem 0 0 .75rem;
+    }
+    a.reviews {
+      color: #666;
+      float: left;
+      display: block;
+      margin: .55rem 0 0 1rem;
+    }
+    a.yelp {
+      display: block;
+      float: right;
+      margin: .3rem .5rem 0 0;
+    }
+  }
+}

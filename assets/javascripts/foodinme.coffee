@@ -83,15 +83,17 @@ class App
   gimmeView: (data) =>
     console.log data
     gimme_view = """
-      <img src="#{@foodIconFor(data.result.categories[0])}" />
-      <h2>#{data.result.name}</h2>
+        <section class="gladware">
+          <img src="#{@foodIconFor(data.result.categories[0])}" class="food" />
+        </section>
+        <h2>#{data.result.name}</h2>
 
-      <a href="javascript:void(0)" class="js-yeah">Yeaah!</a>
-      <a href="javascript:void(0)" class="js-meh">nah.</a>
-
+        <a href="javascript:void(0)" class="js-yeah"><img src="/assets/yeah.svg" alt="Yeaah!" /></a>
+        <br />
+        <a href="javascript:void(0)" class="js-nah"><img src="/assets/nah.svg" alt="nah..." /></a>
     """
     source_view = @sourceViewFor data.result.source, data.result.source_details
-    @outlet.html gimme_view + source_view
+    @outlet.html """<section class="gimme">#{gimme_view}#{source_view}</section>"""
     $('.js-yeah').click ->
       History.pushState null, 'Go Get It.', '/getit'
 
@@ -113,9 +115,9 @@ class App
     if source is 'yelp'
       """
       <section class="yelp">
-        <img src="#{details.rating_img}" />
+        <img src="#{details.rating_img}" class="stars" />
         <a class="reviews">#{details.review_count} Reviews</a>
-        <a href="http://yelp.com"><img src="/assets/yelp-logo.png" alt="Yelp"/></a>
+        <a href="http://yelp.com" class="yelp"><img src="/assets/yelp-logo.png" alt="Yelp"/></a>
       </section>
       """
     else
