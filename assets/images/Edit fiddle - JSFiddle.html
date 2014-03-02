@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor." />
+    <meta name="keywords" content="online javascript editor, testing javascript online, online ide, online code editor, html, css, coffeescript, scss online editor" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="JSFiddle" />
+    <meta name="copyright" content="share alike" />
+
+    <meta name="google-site-verification" content="9m4aWTtDLfQ1kJNm3NtNsCrtpsOx_QoOPQRJ7jAwup8" />
+    <script type="text/javascript" src="/js/moo-clientcide-1.3.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/lib/codemirror.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/mode/javascript/javascript.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/mode/css/css.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/mode/xml/xml.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/mode/htmlmixed/htmlmixed.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/mode/coffeescript/coffeescript.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/addon/search/searchcursor.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/codemirror/addon/edit/matchbrackets.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/jshint.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/emmet.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/Sidebar.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/LayoutCM.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/Actions.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/Resources.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/EditorCM.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/Settings.js?jobofferinsidebar"></script>
+<script type="text/javascript" src="/js/heyoffline.js?jobofferinsidebar"></script>
+
+    <!-- script src="/mooshellmedia/js/clientcide.2.2.0.js" type="text/javascript" charset="utf-8"></script -->
+
+
+<script type="text/javascript" charset="utf-8">
+
+	// switch this to false once on production
+	var disqus_developer = false;
+
+	// uniqie shell ID
+	var disqus_identifier = 'FSqMS';
+
+	// title
+	var disqus_title = '';
+
+</script>
+
+<!--meta name="viewport" content="width=device-width, maximum-scale=0.5" /-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css?jobofferinsidebar"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/tricks.css?jobofferinsidebar"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/elusive-webfont.css?jobofferinsidebar"/>
+
+    <link rel="stylesheet" type="text/css" href="/js/codemirror/lib/codemirror.css?jobofferinsidebar" />
+    <link rel="icon" href="/favicon.png" />
+
+    <!--[if lte IE 7]>
+      <script src="/js/lte-ie7.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css?jobofferinsidebar"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/light.css?jobofferinsidebar"/>
+
+    <script type='text/javascript'>
+      var csspath = "/css/",
+        jspath = "/js/",
+        imgpath = "/img/",
+        mediapath = "/mooshellmedia/",
+        codemirrorpath = "/codemirror/",
+        panel_html = 'html',
+        panel_css = 'css',
+        panel_js = 'javascript',
+        makefavouritepath = "/_make_favourite/",
+        example_server = "http://jsfiddle.net",
+        username = "",
+        static_hash = "jobofferinsidebar",
+        csrfToken = Cookie.read('csrftoken'),
+        mooshell,
+        preload_resources;
+      
+      Layout.skin = "";// "light"
+      window.addEvent('domready', function() {
+        if (panel_js != 'javascript' && $('jslint')) {
+          $('jslint').getParent('li').hide();
+        }
+
+        $extend(Layout, new Events());
+        mooshell = new MooShellActions({
+          example_id: '63588582',
+          exampleURL: "http://jsfiddle.net/FSqMS/",
+          exampleSaveUrl: '/_save/',
+          loadDependenciesURL: '/_get_dependencies/{lib_id}/',
+          loadLibraryVersionsURL: '/_get_library_versions/{group_id}/'
+        });
+        new MooShellEditor.JS(document.id('id_code_js'), {
+          language: panel_js
+        }); // add user defined parameters
+        new MooShellEditor.HTML(document.id('id_code_html'), {
+          language: panel_html
+        }); // add user defined parameters
+        new MooShellEditor.CSS(document.id('id_code_css'), {
+          language: panel_css
+        }); // add user defined parameters
+        Layout.render();
+        
+      });
+      window.addEvent('load', function(){
+        
+
+        // show editors and content when the last editor loads
+        // this will prevent flickering, plus looks nice
+        document.id('content').setStyle('opacity', 1);
+        document.id('sidebar').setStyle('opacity', 1);
+
+        // always keep this at the bottom
+        $$('select.panelChoice').each(function(sel) {
+          this.switchLanguage(sel);
+        }, mooshell);
+      });
+      
+    </script>
+    
+
+    
+    <script type="text/javascript">
+      var pixelRatio = (window.devicePixelRatio >= 1.5) ? "High" : "Normal";
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-366077-13']);
+      _gaq.push(['_setCustomVar', 1, 'Pixel Ratio', pixelRatio, 2]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script>
+      var _prum = [['id', '526a363eabe53df827000000'],
+                   ['mark', 'firstbyte', (new Date()).getTime()]];
+      (function() {
+          var s = document.getElementsByTagName('script')[0]
+            , p = document.createElement('script');
+          p.async = 'async';
+          p.src = '//rum-static.pingdom.net/prum.min.js';
+          s.parentNode.insertBefore(p, s);
+      })();
+    </script>
+    
+
+    <title>Edit fiddle - JSFiddle</title>
+  </head>
+  <body>
+    <h1>Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor.</h1>
+    <h2>online javascript editor, testing javascript online, online ide, online code editor, html, css, coffeescript, scss online editor</h2>
+    <form method="post" id="show-result" target="result" action="http://fiddle.jshell.net/_display/">
+      
+      <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='ZVPNRAggp9Uuv2QQnKLy14CXGCwTtRN2' /></div>
+      <div id="header">
+        <div id="branding">
+          <p id="name"><a title="JSFiddle " href="/" id="home">JSFiddle <span>&alpha;</span></a></p>
+        </div>
+        <div id="actions">
+	<ul class="actionCont collapsed" id="toggleSidebarUl">
+		<li class="actionItem"><a class="aiButton" id="toggleSidebar" title="Toggle sidebar" href="#toggle-sidebar"><span>Hide sidebar</span></a></li>
+  </ul>
+	<ul class="actionCont collapsed">
+		<li class="actionItem">
+			<a class="aiButton" id="run" title="Run (CTRL + Return)" href="#run"><span class="icon-caret-right"></span>Run</a>
+		</li>
+    
+
+		
+			<li class="actionItem">
+				<a class="aiButton" id="update" title="Update (CTRL + S)" href="#update"><span class="icon-pencil"></span>Update</a>
+			</li>
+			<li class="actionItem">
+				<a class="aiButton" id="savenew" title="Fork into a new Fiddle" href="#fork"><span class="icon-fork"></span>Fork</a>
+			</li>
+		
+		
+
+    <li class="actionItem">
+    	<a class="aiButton" id="tidy" title="Re-indent messy code" href="#tidy"><span class="icon-broom"></span>TidyUp</a>
+    </li>
+    <li class="actionItem">
+    	<a class="aiButton" id="jslint" title="Run JSHint on the code" href="#jshint"><span class="icon-ok"></span>JSHint</a>
+    </li>
+    <li class="actionItem">
+    	<a class="aiButton" id="showjscode" title="Show JavaScript code" href="#showjs"><span class="icon-pencil"></span>Show JS</a>
+    </li>
+    <li class="actionItem">
+    	<a class="aiButton" id="collaborate" title="" href="#collaborate"><span class="icon-group"></span>Collaboration</a>
+    </li>
+  </ul>
+
+	
+		<ul class="actionCont dropdown">
+			<li class="actionItem">
+				<a class="aiButton dropdownTrigger" id="share" title="Share this Fiddle" href="#share">Share<span class="icon-caret-down"></span></a>
+				<div class="dropdownCont">
+					<div class="dcWrapper">
+						
+						<div id="share_links_dropdown">
+							<p>
+								<label for="share_link_dropdown">Share link</label>
+								<input id="share_link_dropdown" type="text" class="share" value="http://jsfiddle.net/FSqMS/" />
+							</p>
+							<p>
+								<label for="share_result_dropdown">Share full screen result</label>
+								<input id="share_result_dropdown" type="text" class="share" value="http://jsfiddle.net/FSqMS/embedded/result/" />
+							</p>
+							<p>
+								<label for="share_embedded_dropdown">Embed on your page (<a href="http://doc.jsfiddle.net/use/embedding.html">embed options</a>)</label>
+								<input id="share_embedded_dropdown" type="text" class="share" value='<iframe width="100%" height="300" src="http://jsfiddle.net/FSqMS/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>' />
+							</p>
+						</div>
+
+						<ul id="share-social">
+							<li class="ssItem twitter"><span class="icon-twitter"></span><a href="http://twitter.com/home?status=Check out my fiddle:  http://jsfiddle.net/FSqMS/" title="Click to send this page to Twitter!" target="_blank">Share on Twitter</a></li>
+							<li class="ssItem facebook"><span class="icon-facebook"></span><a href="javascript:var%20d=document,f='http://www.facebook.com/share',l=d.location,e=encodeURIComponent,p='.php?src=bm&amp;v=4&amp;i=1244125276&amp;u='+e(l.href)+'&amp;t='+e(d.title);1;try%7Bif%20(!/%5E(.*%5C.)?facebook%5C.%5B%5E.%5D*$/.test(l.host))throw(0);share_internal_bookmarklet(p)%7Dcatch(z)%20%7Ba=function()%20%7Bif%20(!window.open(f+'r'+p,'sharer','toolbar=0,status=0,resizable=1,width=626,height=436'))l.href=f+p%7D;if%20(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%7Ba()%7D%7Dvoid(0)" title="Post to Facebook">Post to Facebook</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	
+	
+	<ul class="actionCont right">
+		<!-- <li class="actionItem jobboard"><a class="aiButton" href="http://jobs.jsfiddle.net"><span class="icon-bullhorn"></span>JSFiddle Job Board</a></li> -->
+		<li class="actionItem noIcon"><a class="aiButton" id="login" title="Login" href="/user/login/">Login/Sign up<span class="icon-user"></span></a></li>
+	</ul>
+
+
+</div>
+
+
+      </div>
+      <div id="sidebar">
+        
+
+<script type="text/javascript">
+  var DP;
+
+  window.addEvent('domready', function(){
+    DP = new Dropdown();
+  });
+</script>
+
+<h3 class="toggler active" id="settings_toggler">Frameworks &amp; Extensions</h3>
+<div class="element" id="shell_settings">
+  <div class="elementBody">
+    <div class="ebCont">
+      
+        
+          
+<select name='js_lib' id='js_lib'>
+	
+		<optgroup label="Mootools">
+			
+				<option value="96" >Mootools 1.4.5 (compat)</option>
+			
+				<option value="95" >Mootools 1.4.5</option>
+			
+				<option value="63" >Mootools 1.3.2 (compat)</option>
+			
+				<option value="62" >Mootools 1.3.2</option>
+			
+				<option value="144" >Mootools 1.2.6</option>
+			
+				<option value="59" >Mootools (nightly)</option>
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="jQuery">
+			
+				<option value="146" >jQuery 2.x (edge)</option>
+			
+				<option value="188" >jQuery 2.1.0</option>
+			
+				<option value="157" >jQuery 2.0.2</option>
+			
+				<option value="46" >jQuery 1.x (edge)</option>
+			
+				<option value="131" >jQuery 1.9.1</option>
+			
+				<option value="112" >jQuery 1.8.3</option>
+			
+				<option value="101" >jQuery 1.7.2</option>
+			
+				<option value="75" >jQuery 1.6.4</option>
+			
+				<option value="186" >jQuery 1.11.0</option>
+			
+				<option value="156" >jQuery 1.10.1</option>
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Prototype">
+			
+				<option value="54" >Prototype 1.7.1</option>
+			
+				<option value="4" >Prototype 1.6.1.0</option>
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="YUI">
+			
+				<option value="130" >YUI 3.8.0</option>
+			
+				<option value="123" >YUI 3.7.3</option>
+			
+				<option value="118" >YUI 3.6.0</option>
+			
+				<option value="102" >YUI 3.5.0</option>
+			
+				<option value="74" >YUI 3.4.1 simple</option>
+			
+				<option value="73" >YUI 3.4.1</option>
+			
+				<option value="182" >YUI 3.14.0</option>
+			
+				<option value="153" >YUI 3.10.1</option>
+			
+				<option value="9" >YUI 2.8.0r4</option>
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Glow">
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="No-Library">
+			
+				<option value="11" selected="selected">No-Library (pure JS)</option>
+			
+		</optgroup>
+	
+		<optgroup label="Dojo">
+			
+				<option value="152" >Dojo 1.9.0</option>
+			
+				<option value="151" >Dojo 1.8.4</option>
+			
+				<option value="129" >Dojo 1.7.4</option>
+			
+				<option value="61" >Dojo 1.6</option>
+			
+				<option value="34" >Dojo 1.5</option>
+			
+				<option value="87" >Dojo (nightly)</option>
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Processing.js">
+			
+				<option value="135" >Processing.js 1.4.1</option>
+			
+				<option value="81" >Processing.js 1.3.6</option>
+			
+				<option value="67" >Processing.js 1.2.3</option>
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="ExtJS">
+			
+				<option value="147" >ExtJS 4.2.0</option>
+			
+				<option value="80" >ExtJS 4.1.1</option>
+			
+				<option value="107" >ExtJS 4.1.0</option>
+			
+				<option value="109" >ExtJS 3.4.0</option>
+			
+				<option value="23" >ExtJS 3.1.0</option>
+			
+				<option value="24" >ExtJS 3.0.0</option>
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Raphael">
+			
+				<option value="76" >Raphael 2.1.0</option>
+			
+				<option value="36" >Raphael 1.5.2 (min)</option>
+			
+				<option value="30" >Raphael 1.4</option>
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="RightJS">
+			
+				<option value="136" >RightJS 2.3.1</option>
+			
+				<option value="45" >RightJS 2.1.1</option>
+			
+		</optgroup>
+	
+		<optgroup label="Three.js">
+			
+				<option value="82" >Three.js r54</option>
+			
+		</optgroup>
+	
+		<optgroup label="Zepto">
+			
+				<option value="90" >Zepto 1.0rc1</option>
+			
+		</optgroup>
+	
+		<optgroup label="Enyo">
+			
+				<option value="145" >Enyo 2.2.0</option>
+			
+				<option value="121" >Enyo 2.1</option>
+			
+				<option value="116" >Enyo 2.0.1</option>
+			
+				<option value="115" >Enyo (nightly)</option>
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Shipyard">
+			
+				<option value="105" >Shipyard 0.2</option>
+			
+				<option value="99" >Shipyard (nightly)</option>
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Knockout.js">
+			
+				<option value="172" >Knockout.js 3.0.0</option>
+			
+				<option value="163" >Knockout.js 2.3.0</option>
+			
+				<option value="122" >Knockout.js 2.2.1</option>
+			
+				<option value="117" >Knockout.js 2.1.0</option>
+			
+				<option value="104" >Knockout.js 2.0.0</option>
+			
+		</optgroup>
+	
+		<optgroup label="The X Toolkit">
+			
+				<option value="106" >The X Toolkit edge</option>
+			
+		</optgroup>
+	
+		<optgroup label="AngularJS">
+			
+				<option value="180" >AngularJS 1.2.1</option>
+			
+				<option value="137" >AngularJS 1.1.1</option>
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Ember">
+			
+				<option value="190" >Ember 1.3.1</option>
+			
+				
+			
+				
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="Underscore">
+			
+				<option value="160" >Underscore 1.4.4</option>
+			
+				<option value="133" >Underscore 1.4.3</option>
+			
+				<option value="111" >Underscore 1.3.3</option>
+			
+		</optgroup>
+	
+		<optgroup label="Bonsai">
+			
+				<option value="120" >Bonsai 0.4.1</option>
+			
+		</optgroup>
+	
+		<optgroup label="KineticJS">
+			
+				<option value="139" >KineticJS 4.3.1</option>
+			
+				<option value="124" >KineticJS 4.0.5</option>
+			
+		</optgroup>
+	
+		<optgroup label="FabricJS">
+			
+				<option value="178" >FabricJS 1.4.0</option>
+			
+				<option value="161" >FabricJS 1.2.0</option>
+			
+				<option value="125" >FabricJS 0.9</option>
+			
+		</optgroup>
+	
+		<optgroup label="qooxdoo">
+			
+				<option value="126" >qooxdoo 2.1</option>
+			
+				<option value="127" >qooxdoo 2.0.3</option>
+			
+		</optgroup>
+	
+		<optgroup label="D3">
+			
+				<option value="134" >D3 3.0.4</option>
+			
+		</optgroup>
+	
+		<optgroup label="CreateJS">
+			
+				<option value="170" >CreateJS </option>
+			
+				
+			
+		</optgroup>
+	
+		<optgroup label="WebApp Install">
+			
+				<option value="142" >WebApp Install 0.1</option>
+			
+		</optgroup>
+	
+		<optgroup label="Thorax">
+			
+				<option value="174" >Thorax 2.0.0rc6</option>
+			
+				<option value="143" >Thorax 2.0.0rc3</option>
+			
+		</optgroup>
+	
+		<optgroup label="Paper.js">
+			
+				<option value="158" >Paper.js 0.22</option>
+			
+		</optgroup>
+	
+		<optgroup label="React">
+			
+				<option value="192" >React 0.9.0</option>
+			
+				<option value="184" >React 0.8.0</option>
+			
+				<option value="166" >React 0.4.0</option>
+			
+				<option value="159" >React 0.3.2</option>
+			
+		</optgroup>
+	
+		<optgroup label="svg.js">
+			
+				<option value="162" >svg.js 0.x (latest)</option>
+			
+		</optgroup>
+	
+		<optgroup label="Minified">
+			
+				<option value="164" >Minified 1.0 beta1</option>
+			
+		</optgroup>
+	
+		<optgroup label="jTypes">
+			
+				<option value="165" >jTypes 2.1.0</option>
+			
+		</optgroup>
+	
+		<optgroup label="Lo-Dash">
+			
+				<option value="167" >Lo-Dash 2.2.1</option>
+			
+		</optgroup>
+	
+		<optgroup label="Brick">
+			
+				<option value="176" >Brick edge</option>
+			
+		</optgroup>
+	
+</select>
+
+<ul id='js_dependency'>
+	
+
+</ul>
+
+        
+      
+
+      <select name="js_wrap" id="id_js_wrap">
+<option value="l" selected="selected">onLoad</option>
+<option value="d">onDomready</option>
+<option value="h">No wrap - in &lt;head&gt;</option>
+<option value="b">No wrap - in &lt;body&gt;</option>
+</select>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.addEvent('load', function() {
+    $('js_lib').addEvent('change', function() {
+      mooshell.loadDependencies(this.value);
+    })
+    if ($('library_group')) $('library_group').addEvent('change', function() {
+      mooshell.loadLibraryVersions(this.value);
+    })
+  });
+</script>
+
+        <h3 id="about_toggler" class="toggler">Fiddle Options</h3>
+<div class="element">
+  <div class="elementBody">
+    <div class="ebCont">
+      <p>
+        <label>
+          <input id="id_title" type="text" name="title" maxlength="255" value="" placeholder="Name your fiddle" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <textarea id="id_description" rows="10" cols="40" name="description" placeholder="Description"></textarea>
+        </label>
+      </p>
+      <p id="normalize_check">
+        <input type="checkbox" name="normalize_css" id="id_normalize_css" /> <label for="id_normalize_css">Normalized CSS</label><br />
+        
+      </p>
+      <p>
+        <label>
+          Body tag
+          <input id="id_body_tag" type="text" name="body_tag" maxlength="255" />
+        </label>
+      </p>
+      <p>
+        <label>DTD
+          <select name="doctype">
+            
+              <option id="dtd_XHTML 1.0 Strict" value="1">XHTML 1.0 Strict</option>
+            
+              <option id="dtd_XHTML 1.0 Transitional" value="2">XHTML 1.0 Transitional</option>
+            
+              <option selected id="dtd_HTML 5" value="3">HTML 5</option>
+            
+              <option id="dtd_HTML 4.01 Strict" value="4">HTML 4.01 Strict</option>
+            
+              <option id="dtd_HTML 4.01 Transitional" value="5">HTML 4.01 Transitional</option>
+            
+              <option id="dtd_HTML 4.01 Frameset" value="6">HTML 4.01 Frameset</option>
+            
+          </select>
+        </label>
+      </p>
+      
+        <p class="libraryTagAttributes">
+          <label>
+            Framework &lt;script> attribute
+            <input id="id_js_lib_option" type="text" name="js_lib_option" maxlength="255" placeholder='ie. data-type=""' value="" />
+          </label>
+        </p>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+<h3 class='toggler filled' id='resources_toggler'>
+  External Resources <em>1</em>
+</h3>
+
+
+<div class='element' id='resources_element'>
+  <div class="elementBody">
+    <div class="ebCont">
+      <div id="external-resources-form">
+        <input id="external_resource" type="text" value="" placeholder="JavaScript/CSS URI" />
+        <a id="add_external_resource" class="submit" href="#" title="Add resource"><span class="icon-plus"></span></a>
+      </div>
+      <input type='hidden' value='' id='external_resources_id' name='add_external_resources' />
+
+      <ul id='external_resources_list'>
+      <script type='text/javascript'>var resources = [];</script>
+      
+        <li id='external_resource_110829'>
+          <a class='filename' target="_blank" href="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false" title="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false">
+            js?v=3.exp&amp;sensor=false
+          </a>
+          <a onclick='remove_resource(110829)' class='remove'>
+            Remove
+          </a>
+        </li>
+        <script type='text/javascript'>resources.push(110829)</script>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type='text/javascript'>
+  var default_text = 'JavaScript/CSS URL',
+      add_external_resource_url = "/_add_external_resource/";
+</script>
+
+        
+<h3 class="toggler" id="pannels_toggler">Languages</h3>
+<div class="element" id="panels_settings">
+  <div class="elementBody">
+    <div class="ebCont">
+      <div class="selectPanel">
+          <select name="panel_html" class='panelChoice panelChoiceSelect html' id="panel_html_choice" disabled="disabled" data-panel_id="id_code_html" data-panel="html">
+        
+          <option data-mime-type="text/xml" value="0" selected>HTML</option>
+        
+        </select>
+
+        <select name="panel_css" class='panelChoice panelChoiceSelect css' id="panel_css_choice" data-panel_id="id_code_css" data-panel="css">
+          
+            <option data-mime-type="text/css" value="0" selected>CSS</option>
+          
+            <option data-mime-type="text/css" value="1">SCSS</option>
+          
+        </select>
+
+        <select name="panel_js" class='panelChoice panelChoiceSelect js' id="panel_js_choice" data-panel_id="id_code_js" data-panel="js">
+          
+            <option data-mime-type="text/javascript" value="0" selected>JavaScript</option>
+          
+            <option data-mime-type="text/x-coffeescript" value="1">CoffeeScript</option>
+          
+            <option data-mime-type="application/javascript;version=1.7" value="2">JavaScript 1.7</option>
+          
+        </select>
+        <span class="selectFake panelChoice result">Results</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <h3 class="toggler">Ajax Requests</h3>
+<div class="element">
+  <div class="elementBody">
+    <div class="ebCont">
+
+      <p>Echo apis are created to simulate Ajax calls:
+        <code>/echo/json/</code> for JSON,
+        <code>http://jsfiddle.net/echo/jsonp/</code> for JSONP,
+        <code>/echo/html/</code> for HTML and
+        <code>/echo/xml/</code> for XML.
+      </p>
+      <p>Please <a href="http://doc.jsfiddle.net/use/echo.html" target="_new">read API documentation</a> and follow
+        <a onclick="Layout.sidebar.accordion.display(Layout.sidebar.accordion.togglers.indexOf($('examples_toggler')))" href="#">examples</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+        
+        <h3 class="toggler">Legal, Credits and Links</h3>
+<div class="element">
+  <div class="elementBody">
+    <div class="ebCont">
+      <p>Created and maintained by <a title="Piotr's homepage" href="http://webdev.zalewa.info" target="_credits">Piotr</a> and <a title="" href="https://twitter.com/oskar" target="_credits">Oskar</a>.</p>
+      <p>Hosted by <a href="https://www.digitalocean.com/" target="_credits">DigitalOcean</a>.</p>
+      <p>Special thanks to <a href="http://mootools.net" target="_new">MooTools</a> community.</p>
+      <p><strong>License</strong></p>
+      <p>All code belongs to the poster and no license is enforced.</p>
+      <p>JSFiddle or its authors are not responsible or liable for any loss or damage of any kind during the usage of provided code.</p>
+      <p><strong>Links</strong></p>
+      <p>Please read the <a href="http://doc.jsfiddle.net/" target="_new">documentation</a>.<br/>
+        For updates please follow <a href="http://blog.jsfiddle.net/">our blog</a>,
+        <a href="http://twitter.com/jsfiddle/" target="_new">tweets</a>
+        or <a href="http://www.facebook.com/pages/jsFiddle/183790024998" target="_new">become a fan</a>.</p>
+    </div>
+  </div>
+</div>
+
+        
+        
+  <a href="#" id="job" target="_blank"></a>
+
+
+
+        <a class="keyActions" href="#keyboard">Keyboard shortcuts</a>
+      </div>
+      <div id="content">
+        
+        
+
+<input type="hidden" name="version" value="0" id="id_version" />
+<input type='hidden' id='id_slug' name='slug' value='FSqMS'/>
+<fieldset class='column left'>
+    <div class='window top' id="panel_html" data-panel_type="html">
+		<textarea id="id_code_html" rows="10" cols="40" name="code_html">&lt;div id=&quot;panel&quot;&gt;
+    &lt;b&gt;Start: &lt;/b&gt;
+    &lt;select id=&quot;start&quot; onchange=&quot;calcRoute();&quot;&gt;
+      &lt;option value=&quot;chicago, il&quot;&gt;Chicago&lt;/option&gt;
+      &lt;option value=&quot;st louis, mo&quot;&gt;St Louis&lt;/option&gt;
+      &lt;option value=&quot;joplin, mo&quot;&gt;Joplin, MO&lt;/option&gt;
+      &lt;option value=&quot;oklahoma city, ok&quot;&gt;Oklahoma City&lt;/option&gt;
+      &lt;option value=&quot;amarillo, tx&quot;&gt;Amarillo&lt;/option&gt;
+      &lt;option value=&quot;gallup, nm&quot;&gt;Gallup, NM&lt;/option&gt;
+      &lt;option value=&quot;flagstaff, az&quot;&gt;Flagstaff, AZ&lt;/option&gt;
+      &lt;option value=&quot;winona, az&quot;&gt;Winona&lt;/option&gt;
+      &lt;option value=&quot;kingman, az&quot;&gt;Kingman&lt;/option&gt;
+      &lt;option value=&quot;barstow, ca&quot;&gt;Barstow&lt;/option&gt;
+      &lt;option value=&quot;san bernardino, ca&quot;&gt;San Bernardino&lt;/option&gt;
+      &lt;option value=&quot;los angeles, ca&quot;&gt;Los Angeles&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;b&gt;End: &lt;/b&gt;
+    &lt;select id=&quot;end&quot; onchange=&quot;calcRoute();&quot;&gt;
+      &lt;option value=&quot;chicago, il&quot;&gt;Chicago&lt;/option&gt;
+      &lt;option value=&quot;st louis, mo&quot;&gt;St Louis&lt;/option&gt;
+      &lt;option value=&quot;joplin, mo&quot;&gt;Joplin, MO&lt;/option&gt;
+      &lt;option value=&quot;oklahoma city, ok&quot;&gt;Oklahoma City&lt;/option&gt;
+      &lt;option value=&quot;amarillo, tx&quot;&gt;Amarillo&lt;/option&gt;
+      &lt;option value=&quot;gallup, nm&quot;&gt;Gallup, NM&lt;/option&gt;
+      &lt;option value=&quot;flagstaff, az&quot;&gt;Flagstaff, AZ&lt;/option&gt;
+      &lt;option value=&quot;winona, az&quot;&gt;Winona&lt;/option&gt;
+      &lt;option value=&quot;kingman, az&quot;&gt;Kingman&lt;/option&gt;
+      &lt;option value=&quot;barstow, ca&quot;&gt;Barstow&lt;/option&gt;
+      &lt;option value=&quot;san bernardino, ca&quot;&gt;San Bernardino&lt;/option&gt;
+      &lt;option value=&quot;los angeles, ca&quot;&gt;Los Angeles&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;map-canvas&quot;&gt;&lt;/div&gt;</textarea>
+		<span class='window_label'>HTML</span>
+	</div>
+	<div class='handler handler_horizontal'></div>
+	<div class='window bottom' id="panel_js" data-panel_type="javascript">
+		<textarea id="id_code_js" rows="10" cols="40" name="code_js">var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+  var mapOptions = {
+    zoom:7,
+    center: chicago
+  }
+  map = new google.maps.Map(document.getElementById(&#39;map-canvas&#39;), mapOptions);
+  directionsDisplay.setMap(map);
+}
+
+function calcRoute() {
+  var start = document.getElementById(&#39;start&#39;).value;
+  var end = document.getElementById(&#39;end&#39;).value;
+  var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+
+google.maps.event.addDomListener(window, &#39;load&#39;, initialize);</textarea>
+		<span class='window_label'>JavaScript</span>
+	</div>
+	<div class="shim"></div>
+</fieldset>
+
+<div class='handler' id='handler_vertical'></div>
+
+<fieldset class='column right'>
+	<div class='window top' id="panel_css" data-panel_type="css">
+		<textarea id="id_code_css" rows="10" cols="40" name="code_css">html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+}
+
+#panel {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+}</textarea>
+		<span class='window_label'>CSS</span>
+	</div>
+	<div class='handler handler_horizontal'></div>
+	<div id='result' class='window bottom'>
+      <iframe name='result' frameBorder='0' src="http://fiddle.jshell.net/FSqMS/show/"></iframe>
+		<span class='window_label'>Result</span>
+	</div>
+	<div class="shim"></div>
+</fieldset>
+
+      </div>
+    </form>
+
+    
+
+<script>
+  TogetherJSConfig_enableAnalytics = true;
+  TogetherJSConfig_cloneClicks = "#run, .toggler";
+  TogetherJSConfig_toolName = "Collaboration"
+</script>
+<script src="https://togetherjs.com/togetherjs.js"></script>
+
+  </body>
+</html>
