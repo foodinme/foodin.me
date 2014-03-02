@@ -59,7 +59,11 @@ class App
   index: =>
     index_view = """
       <section class="start">
-        <h1><a href="javascript:void(0)" class="js-gimme">Food In Me.</a></h1>
+        <span class="top-teeth"></span>
+        <span class="top-teeth-shadow"></span>
+        <h1><a href="javascript:void(0)" class="js-gimme"><img src="/assets/logo.svg" alt="FoodInMe" /></a></h1>
+        <span class="bottom-teeth-shadow"></span>
+        <span class="bottom-teeth"></span>
       </section>
     """
     @outlet.html index_view

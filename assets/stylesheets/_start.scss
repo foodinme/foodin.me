@@ -1,7 +1,60 @@
 section.start {
+  span.top-teeth {
+    display: block;
+    position: absolute;
+    background: url('/assets/top-teeth.svg');
+    background-size: cover;
+    border-top: 1rem solid #e37d7d;
+    height: 6.1rem;
+    width: 100%;
+    z-index: 5;
+    top: 0;
+  }
+
+  span.top-teeth-shadow {
+    display: block;
+    position: absolute;
+    background: url('/assets/top-teeth-shadow.svg');
+    border-top: 1rem solid #e37d7d;
+    height: 6.1rem;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+  }
+
+  span.bottom-teeth {
+    display: block;
+    position: absolute;
+    background: url('/assets/bottom-teeth.svg');
+    background-size: cover;
+    height: 3rem;
+    width: 100%;
+    z-index: 4;
+  }
+
+  span.bottom-teeth-shadow {
+    display: block;
+    position: absolute;
+    background: url('/assets/bottom-teeth-shadow.svg');
+    height: 1rem;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+  }
+
   h1 {
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 3;
+    text-align: center;
+    height: 4.9rem;
     a {
+      display: inline-block;
       background-color: #6fbfa4;
+      padding: 1rem;
+      border-radius: .3rem;
+      box-shadow: -.3rem .3rem 0 #3a393a;
     }
   }
 }
