@@ -10,21 +10,29 @@ class Router
     route = @app[route_name]
     route()
 
-  route_table: {
+  route_table:
     '/': 'index'
     '/gimme': 'gimme'
-  }
+    '/getit': 'getIt'
 
 
 class GoogleMap
-  constructor: ->
+  constructor: (@app) ->
     @directionsService = new google.maps.DirectionsService()
-    initialize()
+    @addMapCanvas()
+    @initialize()
+
+  addMapCanvas: ->
+    map_canvas = """
+      <section class="map-canvas"></section>
+    """
+    $('section.map').append map_canvas
+    @map_canvas = $('.map-canvas:first')[0]
 
   initialize: ->
-    navigator.geolocation.getCurrentPosition startMap
+    navigator.geolocation.getCurrentPosition @startMap
 
-  startMap: (geo) ->
+  startMap: (geo) =>
     lat = geo.coords.latitude
     long = geo.coords.longitude
     @directionsDisplay = new google.maps.DirectionsRenderer()
@@ -33,20 +41,18 @@ class GoogleMap
       zoom: 16
       center: start_location
 
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
-    directionsDisplay.setMap map
+    map = new google.maps.Map @map_canvas, mapOptions
+    @directionsDisplay.setMap map
 
     @calcRoute start_location
 
-  calcRoute: (start_location, end_location) ->
-    start = start_location
-    end = end_location
+  calcRoute: (start_location) =>
     request =
-      origin: start
-      destination: end
-      travelMode: google.maps.TravelMode.DRIVING
+      origin: start_location
+      destination: @app.destination
+      travelMode: google.maps.TravelMode.WALKING
 
-    @directionsService.route request, (response, status) ->
+    @directionsService.route request, (response, status) =>
       @directionsDisplay.setDirections response  if status is google.maps.DirectionsStatus.OK
 
 
@@ -77,20 +83,34 @@ class App
   gimmeView: (data) =>
     console.log data
     gimme_view = """
+      <img src="#{@foodIconFor(data.result.categories[0])}" />
       <h2>#{data.result.name}</h2>
+
+      <a href="javascript:void(0)" class="js-yeah">Yeaah!</a>
+      <a href="javascript:void(0)" class="js-meh">nah.</a>
+
     """
     source_view = @sourceViewFor data.result.source, data.result.source_details
     @outlet.html gimme_view + source_view
+    $('.js-yeah').click ->
+      History.pushState null, 'Go Get It.', '/getit'
 
-  gettingView: =>
-    # Triggering map here, probably needs tweaking but not alot.
-    # $(document).ready ->
-    #   $(".js-start").click ->
-    #     new GoogleMap
+  foodIconFor: (category) ->
+    icon_table =
+      diners: 'burger'
+    "/assets/#{icon_table[category]}-icon.svg"
+
+  getIt: =>
+    @getGimme().done(@getItView).error (error) =>
+      @displayError error
+
+  getItView: (data) =>
+    @destination = data.result.location.display_address.join ', '
+    @outlet.html """<section class="map"></section>"""
+    new GoogleMap @
 
   sourceViewFor: (source, details)->
     if source is 'yelp'
-      console.log details
       """
       <section class="yelp">
         <img src="#{details.rating_img}" />

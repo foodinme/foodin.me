@@ -1,5 +1,5 @@
 // Including web fonts
-@import '//cloud.typography.com/7097472/650184/css/fonts.css';
+@import 'http://fonts.googleapis.com/css?family=Rokkitt';
 
 // main dependencies
 @import 'reset';
@@ -11,4 +11,6 @@
 
 // Section Specific Styles
 
-@import 'start'
+@import 'start';
+@import 'gimme';
+@import 'map';

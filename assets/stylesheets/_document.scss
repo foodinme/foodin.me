@@ -1,8 +1,9 @@
-html {
-  height: 100%
+html, body {
+  height: 100%;
+  background-color: #404041;
 }
 
-body {
-  min-height: 100%;
-  background-color: #404041;
+section.content {
+  height: 100%;
+  overflow: hidden;
 }
