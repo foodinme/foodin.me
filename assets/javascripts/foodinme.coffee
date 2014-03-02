@@ -71,11 +71,10 @@ class App
       History.pushState null, 'Gimme Food!', '/gimme'
 
   gimme: =>
-    @getGimme().done @gimmeView
-    .error (error) =>
+    @getGimme().done(@gimmeView).error (error) =>
       @displayError error
 
-  gimmeView: (data) ->
+  gimmeView: (data) =>
     console.log data
     gimme_view = """
       <h2>#{data.result.name}</h2>
