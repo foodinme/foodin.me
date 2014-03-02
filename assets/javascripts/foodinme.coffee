@@ -106,13 +106,16 @@ class App
         console.log 'Executing?'
         @outlet.prepend """<section class="gimme" style="display: none;"">#{gimme_view}#{source_view}</section>"""
         $('section.gimme').fadeIn(100)
-        $('span.top-teeth, span.top-teeth-shadow, span.bottom-teeth, span.bottom-teeth-shadow').removeClass('close').fadeOut 500, ->
+        $('span.top-teeth, span.top-teeth-shadow, span.bottom-teeth, span.bottom-teeth-shadow').removeClass('close').fadeOut 500, =>
           $('section.start').remove()
+          @gimmeBindings()
     else
       @outlet.html """<section class="gimme">#{gimme_view}#{source_view}</section>"""
+      @gimmeBindings()
 
     @last_view = 'gimme'
 
+  gimmeBindings: ->
     $('.js-yeah').click (event) ->
       url = if app.url then "?url=#{encodeURIComponent(app.url)}" else ''
       History.pushState null, 'Go Get It.', "/getit#{url}"
