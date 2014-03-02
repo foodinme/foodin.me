@@ -6,14 +6,16 @@ class Router
   getRoute: =>
     @current_state = History.getState()
     path = @current_state.hash.split('?')[0]
+    params = @current_state.hash.split('?')[1]
     route_name = @route_table[path]
     route = @app[route_name]
-    route()
+    route $.deparam(params)
 
   route_table:
     '/': 'index'
     '/gimme': 'gimme'
     '/getit': 'getIt'
+    '/gimme-another': 'gimmeAnother'
 
 
 class GoogleMap
@@ -81,7 +83,6 @@ class App
       @displayError error
 
   gimmeView: (data) =>
-    console.log data
     gimme_view = """
         <section class="gladware">
           <img src="#{@foodIconFor(data.result.categories[0])}" class="food" />
@@ -90,17 +91,25 @@ class App
 
         <a href="javascript:void(0)" class="js-yeah"><img src="/assets/yeah.svg" alt="Yeaah!" /></a>
         <br />
-        <a href="javascript:void(0)" class="js-nah"><img src="/assets/nah.svg" alt="nah..." /></a>
+        <a href="javascript:void(0)" class="js-nah" data-new-result="#{data.meh}"><img src="/assets/nah.svg" alt="nah..." /></a>
     """
     source_view = @sourceViewFor data.result.source, data.result.source_details
     @outlet.html """<section class="gimme">#{gimme_view}#{source_view}</section>"""
     $('.js-yeah').click ->
       History.pushState null, 'Go Get It.', '/getit'
+    $('.js-nah').click (event) =>
+      new_url = $(event.currentTarget).data('new-result')
+      History.pushState null, 'Maybe something else...', "/gimme-another?url=#{encodeURIComponent(new_url)}"
 
   foodIconFor: (category) ->
     icon_table =
       diners: 'burger'
+      italian: 'spaghetti'
     "/assets/#{icon_table[category]}-icon.svg"
+
+  gimmeAnother: (params) =>
+    @getGimmeAnother(params.url).done(@gimmeView).error (error) =>
+      @displayError error
 
   getIt: =>
     @getGimme().done(@getItView).error (error) =>
@@ -130,6 +139,11 @@ class App
   getGimme: ->
     $.ajax
       url: '/api/gimme'
+      type: 'get'
+
+  getGimmeAnother: (url) ->
+    $.ajax
+      url: url
       type: 'get'
 
   router: ->
