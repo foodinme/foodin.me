@@ -9,7 +9,10 @@ class Router
     params = @current_state.hash.split('?')[1]
     route_name = @route_table[path]
     route = @app[route_name]
-    route $.deparam(params)
+    if !!params
+      route $.deparam(params)
+    else
+      route()
 
   route_table:
     '/': 'index'
@@ -79,6 +82,7 @@ class App
       History.pushState null, 'Gimme Food!', '/gimme'
 
   gimme: =>
+    @url = false
     @getGimme().done(@gimmeView).error (error) =>
       @displayError error
 
@@ -95,8 +99,10 @@ class App
     """
     source_view = @sourceViewFor data.result.source, data.result.source_details
     @outlet.html """<section class="gimme">#{gimme_view}#{source_view}</section>"""
-    $('.js-yeah').click ->
-      History.pushState null, 'Go Get It.', '/getit'
+
+    $('.js-yeah').click (event) ->
+      url = if app.url then "?url=#{encodeURIComponent(app.url)}" else ''
+      History.pushState null, 'Go Get It.', "/getit#{url}"
     $('.js-nah').click (event) =>
       new_url = $(event.currentTarget).data('new-result')
       History.pushState null, 'Maybe something else...', "/gimme-another?url=#{encodeURIComponent(new_url)}"
@@ -104,16 +110,28 @@ class App
   foodIconFor: (category) ->
     icon_table =
       diners: 'burger'
+      newamerican: 'burger'
+      tradamerican: 'burger'
       italian: 'spaghetti'
-    "/assets/#{icon_table[category]}-icon.svg"
+      mexican: 'taco'
+      latin: 'taco'
+
+    icon_name = if !!icon_table[category] then icon_table[category] else 'default'
+    "/assets/#{icon_name}-icon.svg"
 
   gimmeAnother: (params) =>
-    @getGimmeAnother(params.url).done(@gimmeView).error (error) =>
+    @url = params.url
+    @getGimmeAnother(@url).done(@gimmeView).error (error) =>
       @displayError error
 
-  getIt: =>
-    @getGimme().done(@getItView).error (error) =>
-      @displayError error
+  getIt: (params) =>
+    if params.url?
+      @url = params.url
+      @getGimmeAnother(@url).done(@getItView).error (error) =>
+        @displayError error
+    else
+      @getGimme().done(@getItView).error (error) =>
+        @displayError error
 
   getItView: (data) =>
     @destination = data.result.location.display_address.join ', '
