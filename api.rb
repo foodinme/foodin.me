@@ -95,6 +95,21 @@ else
   SessionStore = MemorySessionStore.new
 end
 
+BurgatronClient = Burgatron::Client.new 
+
+if ENV['YELP_CONSUMER_KEY']
+  BurgatronClient.add_source Burgatron::Sources::Yelp.new(
+    yelp_config: {
+      consumer_key:    ENV['YELP_CONSUMER_KEY'],
+      consumer_secret: ENV['YELP_CONSUMER_SECRET'],
+      token:           ENV['YELP_TOKEN'],
+      token_secret:    ENV['YELP_TOKEN_SECRET']
+    }
+  )
+else
+  BurgatronClient.add_source Burgatron::Sources::Canned.new(path: "canned.yml")
+end
+
 class API < Sinatra::Base
   helpers Sinatra::JSON
 
@@ -128,11 +143,7 @@ class API < Sinatra::Base
   private
 
   def client
-    @client ||= begin
-      Burgatron::Client.new.tap do |client|
-        client.add_source Burgatron::Sources::Canned.new(path: "canned.yml")
-      end
-    end
+    BurgatronClient
   end
 
   def sessions
