@@ -81,6 +81,8 @@ class App
     $('.js-gimme').click ->
       History.pushState null, 'Gimme Food!', '/gimme'
 
+    @last_view = 'index'
+
   gimme: =>
     @url = false
     @getGimme().done(@gimmeView).error (error) =>
@@ -98,7 +100,18 @@ class App
         <a href="javascript:void(0)" class="js-nah" data-new-result="#{data.meh}"><img src="/assets/nah.svg" alt="nah..." /></a>
     """
     source_view = @sourceViewFor data.result.source, data.result.source_details
-    @outlet.html """<section class="gimme">#{gimme_view}#{source_view}</section>"""
+    if @last_view is 'index'
+      $('span.top-teeth, span.top-teeth-shadow, span.bottom-teeth, span.bottom-teeth-shadow').addClass 'close'
+      $('h1').fadeOut 500, =>
+        console.log 'Executing?'
+        @outlet.prepend """<section class="gimme" style="display: none;"">#{gimme_view}#{source_view}</section>"""
+        $('section.gimme').fadeIn(100)
+        $('span.top-teeth, span.top-teeth-shadow, span.bottom-teeth, span.bottom-teeth-shadow').removeClass('close').fadeOut 500, ->
+          $('section.start').remove()
+    else
+      @outlet.html """<section class="gimme">#{gimme_view}#{source_view}</section>"""
+
+    @last_view = 'gimme'
 
     $('.js-yeah').click (event) ->
       url = if app.url then "?url=#{encodeURIComponent(app.url)}" else ''

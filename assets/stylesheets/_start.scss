@@ -1,46 +1,62 @@
+@mixin teeth {
+  display: block;
+  position: absolute;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  transition: border-width .5s ease;
+}
+
 section.start {
   span.top-teeth {
-    display: block;
-    position: absolute;
-    background: url('/assets/top-teeth.svg');
-    background-size: cover;
+    @include teeth;
+    background-image: url('/assets/top-teeth.svg');
     border-top: 1rem solid #e37d7d;
     height: 6.1rem;
-    width: 100%;
     z-index: 5;
     top: 0;
+    &.close {
+      border-top-width: 14rem;
+    }
   }
 
   span.top-teeth-shadow {
-    display: block;
-    position: absolute;
-    background: url('/assets/top-teeth-shadow.svg');
+    @include teeth;
+    background-image: url('/assets/top-teeth-shadow.svg');
     border-top: 1rem solid #e37d7d;
     height: 6.1rem;
     width: 100%;
     z-index: 2;
     top: 0;
+    &.close {
+      border-top-width: 14rem;
+    }
   }
 
   span.bottom-teeth {
-    display: block;
-    position: absolute;
-    background: url('/assets/bottom-teeth.svg');
-    background-size: cover;
+    @include teeth;
+    background-image: url('/assets/bottom-teeth.svg');
+    border-bottom: .5rem solid #e37d7d;
     height: 5.35rem;
     width: 100%;
     bottom: 0;
     z-index: 4;
+    &.close {
+      border-bottom-width: 15rem;
+    }
   }
 
   span.bottom-teeth-shadow {
-    display: block;
-    position: absolute;
-    background: url('/assets/bottom-teeth-shadow.svg');
+    @include teeth;
+    background-image: url('/assets/bottom-teeth-shadow.svg');
+    border-bottom: .5rem solid #e37d7d;
     height: 5.35rem;
     width: 100%;
     bottom: 0;
     z-index: 1;
+    &.close {
+      border-bottom-width: 15rem;
+    }
   }
 
   h1 {
