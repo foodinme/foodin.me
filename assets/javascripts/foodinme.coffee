@@ -150,17 +150,14 @@ class App
   gimmeAnother: (params) =>
     @url = params.url
     @getLocation().done =>
-      @getGimmeAnother(@url).done(@gimmeView).error (error) =>
-        @displayError error
+      @getGimmeAnother(@url).done(@gimmeView).error(@displayError)
 
   getIt: (params) =>
     if params.url?
       @url = params.url
-      @getGimmeAnother(@url).done(@getItView).error (error) =>
-        @displayError error
+      @getGimmeAnother(@url).done(@getItView).error(@displayError)
     else
-      @getGimme().done(@getItView).error (error) =>
-        @displayError error
+      @getGimme().done(@getItView).error(@displayError)
 
   getItView: (data) =>
     @destination = data.result.location.display_address.join ', '
@@ -181,7 +178,29 @@ class App
       ''
 
   displayError: (error) ->
-    $('body').prepend """<section class="error">#{error}</section>"""
+    console.log error
+    $('body').append """
+      <section class="error" style="opacity: 0; -webkit-transform: rotateX(45deg); transform: rotateX(-45deg)">
+        <a href="javascript:void(0)" class="js-close">close</a>
+        <section>
+          <h4>An Error Has Occured</h4>
+          <p>#{error.statusText}</p>
+        </section>
+      </section>
+    """
+
+    $('section.error').transition
+      perspective: '999px'
+      rotateX: '0deg'
+      opacity: 1
+
+    $('.js-close').click ->
+      $('section.error').transition
+        perspective: '999px'
+        rotateX: '45deg'
+        opacity: 0
+      , ->
+        $('section.error').remove()
 
   getGimme: ->
     $.ajax
