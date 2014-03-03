@@ -95,7 +95,7 @@ else
   SessionStore = MemorySessionStore.new
 end
 
-BurgatronClient = Burgatron::Client.new 
+BurgatronClient = Burgatron::Client.new
 
 if ENV['YELP_CONSUMER_KEY']
   puts "You got the real Yelp now, dog!"
@@ -119,7 +119,7 @@ class API < Sinatra::Base
       unless params[:id] && session.stored_results?
         session.store_results client.retrieve(retrieve_params)
       end
-      
+
       result, this_id, next_id = session.fetch_result(params[:id])
 
       json "result"  => result.to_h,
@@ -131,7 +131,7 @@ class API < Sinatra::Base
            "session" => session
     end
   end
-  
+
   post '/yeah' do
     authenticate do |session|
       result, this_id, next_id = session.fetch_result(params[:id])
@@ -158,7 +158,7 @@ class API < Sinatra::Base
   def retrieve_params
     {
       latitude: params[:latitude] ? params[:latitude].to_f : 45.50144,
-      longitude: params[:longitude] ? params[:latitude].to_f : -122.654306
+      longitude: params[:longitude] ? params[:longitude].to_f : -122.654306
     }
   end
 
@@ -174,5 +174,3 @@ class Struct
   end
 
 end
-
-

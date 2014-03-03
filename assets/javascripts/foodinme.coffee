@@ -83,10 +83,22 @@ class App
 
     @last_view = 'index'
 
+  getLocation: =>
+    deferred = $.Deferred()
+
+    resolveLocation = (geo) =>
+      @coords = geo.coords
+      deferred.resolve()
+
+    navigator.geolocation.getCurrentPosition resolveLocation
+
+    deferred.promise()
+
   gimme: =>
     @url = false
-    @getGimme().done(@gimmeView).error (error) =>
-      @displayError error
+    @getLocation().done =>
+      @getGimme().done(@gimmeView).error (error) =>
+        @displayError error
 
   gimmeView: (data) =>
     gimme_view = """
@@ -137,8 +149,9 @@ class App
 
   gimmeAnother: (params) =>
     @url = params.url
-    @getGimmeAnother(@url).done(@gimmeView).error (error) =>
-      @displayError error
+    @getLocation().done =>
+      @getGimmeAnother(@url).done(@gimmeView).error (error) =>
+        @displayError error
 
   getIt: (params) =>
     if params.url?
@@ -174,11 +187,17 @@ class App
     $.ajax
       url: '/api/gimme'
       type: 'get'
+      data:
+        latitude: @coords.latitude
+        longitude: @coords.longitude
 
   getGimmeAnother: (url) ->
     $.ajax
       url: url
       type: 'get'
+      data:
+        latitude: @coords.latitude
+        longitude: @coords.longitude
 
   router: ->
     new Router @
