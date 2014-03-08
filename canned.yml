@@ -16,6 +16,7 @@
     address:
     - SE 11th & SE Division
     state_code: OR
+    geo_address: SE 11th & SE Division, Portland, OR 97202
   categories:
   - diners
   - coffee
@@ -41,6 +42,7 @@
     address:
     - 1125 SE Division St
     state_code: OR
+    geo_address: 1125 SE Division St, Portland, OR 97202
   categories:
   - italian
   - vegan
@@ -66,6 +68,7 @@
     address:
     - 1235 SE Division St
     state_code: OR
+    geo_address: 1235 SE Division St, Ladd's Addition, Portland, OR 97214
   categories:
   - sandwiches
   - asianfusion
@@ -91,6 +94,7 @@
     address:
     - 1212 SE Division St
     state_code: OR
+    geo_address: 1212 SE Division St, Portland, OR 97202
   categories:
   - mexican
   source: yelp
@@ -115,6 +119,7 @@
     address:
     - 1101 SE Division St
     state_code: OR
+    geo_address: 1101 SE Division St, Portland, OR 97202
   categories:
   - newamerican
   - breakfast_brunch
@@ -139,6 +144,7 @@
     address:
     - SE 12th Ave & SE Hawthorne Blvd
     state_code: OR
+    geo_address: SE 12th Ave & SE Hawthorne Blvd, Buckman, Portland, OR 97214
   categories:
   - sandwiches
   - foodtrucks
@@ -164,6 +170,7 @@
     address:
     - 2311 SE 8th Ave
     state_code: OR
+    geo_address: 2311 SE 8th Ave, Portland, OR 97214
   categories:
   - mexican
   source: yelp
@@ -187,6 +194,7 @@
     address:
     - 3119 SE 12th Ave
     state_code: OR
+    geo_address: 3119 SE 12th Ave, Brooklyn, Portland, OR 97202
   categories:
   - delis
   - gourmet
@@ -212,6 +220,7 @@
     address:
     - 1615 SE 12th Ave
     state_code: OR
+    geo_address: 1615 SE 12th Ave, Portland, OR 97214
   categories:
   - latin
   - gluten_free
@@ -237,6 +246,7 @@
     address:
     - 3400 1/2  SE Milwaukie Ave
     state_code: OR
+    geo_address: 3400 1/2  SE Milwaukie Ave, Brooklyn, Portland, OR 97202
   categories:
   - tradamerican
   - bbq
@@ -262,6 +272,7 @@
     address:
     - 1711 SE Hawthorne Blvd.
     state_code: OR
+    geo_address: 1711 SE Hawthorne Blvd., Buckman, Portland, OR 97214
   categories:
   - sandwiches
   source: yelp
@@ -285,6 +296,7 @@
     address:
     - 1223 SE Powell Blvd
     state_code: OR
+    geo_address: 1223 SE Powell Blvd, Portland, OR 97202
   categories:
   - vegan
   - vegetarian
@@ -311,6 +323,7 @@
     address:
     - 3029 SE 21st Ave
     state_code: OR
+    geo_address: 3029 SE 21st Ave, Portland, OR 97202
   categories:
   - foodstands
   - juicebars
@@ -335,6 +348,7 @@
     address:
     - 3200 SE Milwaukie Ave
     state_code: OR
+    geo_address: 3200 SE Milwaukie Ave, Brooklyn, Portland, OR 97202
   categories:
   - breakfast_brunch
   source: yelp
@@ -359,6 +373,7 @@
     address:
     - 1742 SE 12th Ave
     state_code: OR
+    geo_address: 1742 SE 12th Ave, Ladd's Addition, Portland, OR 97214
   categories:
   - vegetarian
   - breakfast_brunch
@@ -384,6 +399,7 @@
     address:
     - 1101 SE Division
     state_code: OR
+    geo_address: 1101 SE Division, Portland, OR 97202
   categories:
   - cafes
   source: yelp
@@ -407,6 +423,7 @@
     address:
     - 3023 SE Milwaukie Ave
     state_code: OR
+    geo_address: 3023 SE Milwaukie Ave, Brooklyn, Portland, OR 97202
   categories:
   - newamerican
   - salad
@@ -432,6 +449,7 @@
     address:
     - 3131 SE 12th Ave
     state_code: OR
+    geo_address: 3131 SE 12th Ave, Brooklyn, Portland, OR 97202
   categories:
   - comfortfood
   - modern_european
@@ -458,6 +476,7 @@
     address:
     - 1752 SE Hawthorne Blvd
     state_code: OR
+    geo_address: 1752 SE Hawthorne Blvd, Ladd's Addition, Portland, OR 97214
   categories:
   - newamerican
   source: yelp
@@ -482,6 +501,7 @@
     address:
     - 2030 SE 7th Ave
     state_code: OR
+    geo_address: 2030 SE 7th Ave, Portland, OR 97214
   categories:
   - gluten_free
   - newamerican

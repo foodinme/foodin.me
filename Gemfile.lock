@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/foodinme/burgatron.git
-  revision: 80806be08a6a68af4c6dab1d1e1f98006f003b0d
+  revision: e03d2cd88bb32cde2f9da738844f97bb8c229aed
   specs:
     burgatron (0.0.1)
       foursquare2

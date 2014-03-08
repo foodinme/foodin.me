@@ -160,7 +160,7 @@ class App
       @getGimme().done(@getItView).error(@displayError)
 
   getItView: (data) =>
-    @destination = data.result.location.display_address.join ', '
+    @destination = data.result.location.geo_address
     @outlet.html """<section class="map"></section>"""
     new GoogleMap @
 
