@@ -96,9 +96,24 @@ else
 end
 
 BurgatronClient = Burgatron::Client.new
+sources_added = false
+
+if ENV['FOURSQUARE_CLIENT_ID']
+  puts "[Burgatron] Foursquare activated."
+  sources_added = true
+  BurgatronClient.add_source Burgatron::Sources::Foursquare.new(
+    foursquare_config: {
+      client_id:      ENV["FOURSQUARE_CLIENT_ID"],
+      client_secret:  ENV["FOURSQUARE_CLIENT_SECRET"]
+    }
+  )
+else
+  puts "[Burgatron] Pass FOURSQUARE_CLIENT_ID, FOURSQUARE_CLIENT_SECRET in env to enable Foursquare results."
+end
 
 if ENV['YELP_CONSUMER_KEY']
-  puts "You got the real Yelp now, dog!"
+  puts "[Burgatron] You got the real Yelp now, dog!"
+  sources_added = true
   BurgatronClient.add_source Burgatron::Sources::Yelp.new(
     yelp_config: {
       consumer_key:    ENV['YELP_CONSUMER_KEY'],
@@ -108,6 +123,11 @@ if ENV['YELP_CONSUMER_KEY']
     }
   )
 else
+  puts "[Burgatron] Pass YELP_CONSUMER_KEY, YELP_CONSUMER_SECRET, YELP_TOKEN, YELP_TOKEN_SECRET in env to enable Yelp results."
+end
+
+unless sources_added
+  puts "[Burgatron] No real sources available. Using canned results."
   BurgatronClient.add_source Burgatron::Sources::Canned.new(path: "canned.yml")
 end
 
