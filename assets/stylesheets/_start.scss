@@ -10,7 +10,7 @@
 section.start {
   span.top-teeth {
     @include teeth;
-    background-image: url('/assets/top-teeth.svg');
+    background-image: url('/images/top-teeth.svg');
     border-top: 1rem solid #e37d7d;
     height: 6.1rem;
     z-index: 5;
@@ -22,7 +22,7 @@ section.start {
 
   span.top-teeth-shadow {
     @include teeth;
-    background-image: url('/assets/top-teeth-shadow.svg');
+    background-image: url('/images/top-teeth-shadow.svg');
     border-top: 1rem solid #e37d7d;
     height: 6.1rem;
     width: 100%;
@@ -35,7 +35,7 @@ section.start {
 
   span.bottom-teeth {
     @include teeth;
-    background-image: url('/assets/bottom-teeth.svg');
+    background-image: url('/images/bottom-teeth.svg');
     border-bottom: .5rem solid #e37d7d;
     height: 5.35rem;
     width: 100%;
@@ -48,7 +48,7 @@ section.start {
 
   span.bottom-teeth-shadow {
     @include teeth;
-    background-image: url('/assets/bottom-teeth-shadow.svg');
+    background-image: url('/images/bottom-teeth-shadow.svg');
     border-bottom: .5rem solid #e37d7d;
     height: 5.35rem;
     width: 100%;

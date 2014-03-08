@@ -72,7 +72,7 @@ class App
       <section class="start">
         <span class="top-teeth"></span>
         <span class="top-teeth-shadow"></span>
-        <h1><a href="javascript:void(0)" class="js-gimme"><img src="/assets/logo.svg" alt="FoodInMe" /></a></h1>
+        <h1><a href="javascript:void(0)" class="js-gimme"><img src="/images/logo.svg" alt="FoodInMe" /></a></h1>
         <span class="bottom-teeth-shadow"></span>
         <span class="bottom-teeth"></span>
       </section>
@@ -107,9 +107,9 @@ class App
         </section>
         <h2>#{data.result.name}</h2>
 
-        <a href="javascript:void(0)" class="js-yeah"><img src="/assets/yeah.svg" alt="Yeaah!" /></a>
+        <a href="javascript:void(0)" class="js-yeah"><img src="/images/yeah.svg" alt="Yeaah!" /></a>
         <br />
-        <a href="javascript:void(0)" class="js-nah" data-new-result="#{data.meh}"><img src="/assets/nah.svg" alt="nah..." /></a>
+        <a href="javascript:void(0)" class="js-nah" data-new-result="#{data.meh}"><img src="/images/nah.svg" alt="nah..." /></a>
     """
     source_view = @sourceViewFor data.result.source, data.result.source_details
     if @last_view is 'index'
@@ -145,7 +145,7 @@ class App
       latin: 'taco'
 
     icon_name = if !!icon_table[category] then icon_table[category] else 'default'
-    "/assets/#{icon_name}-icon.svg"
+    "/images/#{icon_name}-icon.svg"
 
   gimmeAnother: (params) =>
     @url = params.url
@@ -170,7 +170,7 @@ class App
       <section class="yelp">
         <img src="#{details.rating_img}" class="stars" />
         <a class="reviews">#{details.review_count} Reviews</a>
-        <a href="http://yelp.com" class="yelp"><img src="/assets/yelp-logo.png" alt="Yelp"/></a>
+        <a href="http://yelp.com" class="yelp"><img src="/images/yelp-logo.png" alt="Yelp"/></a>
       </section>
       """
     else
