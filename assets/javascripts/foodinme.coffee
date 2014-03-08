@@ -103,7 +103,7 @@ class App
   gimmeView: (data) =>
     gimme_view = """
         <section class="gladware">
-          <img src="#{@foodIconFor(data.result.categories[0])}" class="food" />
+          <img src="#{@foodIconFor(data.result.categories)}" class="food" />
         </section>
         <h2>#{data.result.name}</h2>
 
@@ -135,8 +135,9 @@ class App
       new_url = $(event.currentTarget).data('new-result')
       History.pushState null, 'Maybe something else...', "/gimme-another?url=#{encodeURIComponent(new_url)}"
 
-  foodIconFor: (category) ->
+  foodIconFor: (categories) ->
     icon_table =
+      burgers: 'burger'
       diners: 'burger'
       newamerican: 'burger'
       tradamerican: 'burger'
@@ -144,7 +145,12 @@ class App
       mexican: 'taco'
       latin: 'taco'
 
-    icon_name = if !!icon_table[category] then icon_table[category] else 'default'
+    icon_name = "default"
+    for category in categories
+      if icon_table[category]
+        icon_name = icon_table[category]
+        break
+
     "/images/#{icon_name}-icon.svg"
 
   gimmeAnother: (params) =>
