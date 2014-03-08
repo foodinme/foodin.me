@@ -137,6 +137,7 @@ class App
 
   foodIconFor: (categories) ->
     icon_table =
+      asian: 'asian'
       burgers: 'burger'
       diners: 'burger'
       newamerican: 'burger'
