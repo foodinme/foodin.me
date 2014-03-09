@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/foodinme/burgatron.git
-  revision: a112f1b9a7052f039b19cfe95cc92f4bb9d79b1d
+  revision: 220dd5d6bb34fc0b5b3d2c08317dec0b2bc30c5c
   specs:
     burgatron (0.0.1)
       foursquare2
@@ -10,11 +10,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.6.0)
-    coderay (1.0.9)
+    coderay (1.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.0)
     execjs (2.0.2)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
@@ -24,27 +24,28 @@ GEM
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
       hashie (>= 1.0, < 3.0.0)
-    haml (4.0.3)
+    haml (4.0.5)
       tilt
     hashie (2.0.5)
     hike (1.2.3)
     json (1.8.1)
     method_source (0.8.2)
-    multi_json (1.7.9)
+    multi_json (1.9.0)
     multipart-post (1.2.0)
     oauth (0.4.7)
     pg (0.17.1)
-    pry (0.9.12.2)
-      coderay (~> 1.0.5)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    rack (1.4.5)
+    rack (1.5.2)
     rack-protection (1.5.2)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.1.0)
-    sass (3.2.10)
+    rake (10.1.1)
+    sass (3.3.0)
+      rake
     sequel (4.8.0)
     sinatra (1.4.4)
       rack (~> 1.4)
@@ -65,8 +66,8 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
-    slop (3.4.6)
-    sprockets (2.2.2)
+    slop (3.4.7)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
