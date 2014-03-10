@@ -115,7 +115,6 @@ class App
     if @last_view is 'index'
       $('span.top-teeth, span.top-teeth-shadow, span.bottom-teeth, span.bottom-teeth-shadow').addClass 'close'
       $('h1').fadeOut 500, =>
-        console.log 'Executing?'
         @outlet.prepend """<section class="gimme" style="display: none;"">#{gimme_view}#{source_view}</section>"""
         $('section.gimme').fadeIn(100)
         $('span.top-teeth, span.top-teeth-shadow, span.bottom-teeth, span.bottom-teeth-shadow').removeClass('close').fadeOut 500, =>
