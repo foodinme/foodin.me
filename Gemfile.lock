@@ -92,7 +92,7 @@ DEPENDENCIES
   json
   pg
   pry
-  sass
+  sass (~> 3.3.0)
   sequel
   sinatra
   sinatra-asset-pipeline
