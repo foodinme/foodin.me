@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
 
 gem 'pry'
 gem 'json'
@@ -9,6 +8,13 @@ gem 'sass', '~> 3.3.0'
 gem 'coffee-script'
 gem 'haml'
 gem 'sinatra-asset-pipeline'
+
+# Deploy with Capistrano
+gem 'capistrano'
+gem 'capistrano-passenger'
+gem 'capistrano-bundler'
+gem 'capistrano-rvm'
+gem "capistrano-db-tasks", require: false
 
 gem 'pg'
 gem 'sequel'
