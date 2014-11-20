@@ -55,4 +55,12 @@ namespace :deploy do
     end
   end
 
+  after 'bundler:install', :compile_assets do
+    on roles(:rvm_roles, :all) do
+      within release_path do
+        execute :rake, 'assets:precompile', 'RACK_ENV=production'
+      end
+    end
+  end
+
 end
