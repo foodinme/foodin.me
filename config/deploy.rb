@@ -37,6 +37,14 @@ set :passenger_restart_with_touch, false
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+task :compile_assets do
+  on roles(:rvm_roles, :all) do
+    within release_path do
+      execute :rake, 'assets:precompile', 'RACK_ENV=production'
+    end
+  end
+end
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -58,12 +66,6 @@ namespace :deploy do
     end
   end
 
-  after 'bundler:install', :compile_assets do
-    on roles(:rvm_roles, :all) do
-      within release_path do
-        execute :rake, 'assets:precompile', 'RACK_ENV=production'
-      end
-    end
-  end
+  after 'bundler:install', :compile_assets
 
 end
