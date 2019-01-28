@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+lock '3.11.0'
 
 set :application, 'foodinme'
 set :repo_url, 'git@github.com:foodinme/foodin.me.git'
