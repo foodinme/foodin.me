@@ -4,6 +4,9 @@ lock '3.2.1'
 set :application, 'foodinme'
 set :repo_url, 'git@github.com:foodinme/foodin.me.git'
 
+# Note that `nil` is NOT the same as `false` here
+set :passenger_restart_with_touch, false
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
