@@ -1,7 +1,7 @@
-Bundler.require
-
+require 'burgatron'
 require 'securerandom'
-require 'sinatra/json'
+require 'sinatra'
+require 'sinatra/contrib'
 require 'sequel'
 
 class Session < Struct.new(:token, :store)
@@ -133,7 +133,7 @@ end
 
 class API < Sinatra::Base
   helpers Sinatra::JSON
-
+  
   get '/gimme' do
     authenticate do |session|
       unless params[:id] && session.stored_results?
@@ -181,7 +181,6 @@ class API < Sinatra::Base
       longitude: params[:longitude] ? params[:longitude].to_f : -122.654306
     }
   end
-
 end
 
 class Struct

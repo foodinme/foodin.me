@@ -1,6 +1,4 @@
-require 'bundler'
-Bundler.require
-
+require 'sinatra'
 require 'sinatra/asset_pipeline'
 
 class App < Sinatra::Base

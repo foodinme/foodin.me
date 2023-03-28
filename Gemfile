@@ -1,22 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-gem 'json'
-gem 'sinatra'
-gem 'sinatra-contrib'
-gem 'sass', '~> 3.3.0'
+gem 'burgatron', github: 'foodinme/burgatron'
 gem 'coffee-script'
 gem 'haml'
-gem 'sinatra-asset-pipeline'
-
-# Deploy with Capistrano
-gem 'capistrano'
-gem 'capistrano-passenger'
-gem 'capistrano-bundler'
-gem 'capistrano-rvm'
-gem "capistrano-db-tasks", require: false
-
+gem 'json'
 gem 'pg'
+gem 'pry'
+gem 'puma', '~> 6.1'
+gem 'sass', '~> 3.3.0'
 gem 'sequel'
+gem 'sinatra'
+gem 'sinatra-asset-pipeline'
+gem 'sinatra-contrib'
 
-gem 'burgatron', github: 'foodinme/burgatron'
