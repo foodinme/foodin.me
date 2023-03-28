@@ -10,6 +10,9 @@
 section.start {
   span.top-teeth {
     @include teeth;
+    // Calculated from svg board 320x98
+    // https://www.calculatorsoup.com/calculators/math/fractionssimplify.php
+    aspect-ratio: 160 / 49;
     background-image: url('/images/top-teeth.svg');
     border-top: 1rem solid #e37d7d;
     height: 6.1rem;
